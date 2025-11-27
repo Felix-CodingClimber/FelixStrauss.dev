@@ -120,7 +120,7 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: https://github.com/Felix-CodingClimber/FelixStrauss.dev # <gh-username>/<repo>
+    repo: Felix-CodingClimber/FelixStrauss.dev # <gh-username>/<repo>
     repo_id: R_kgDOQd9fXw
     category: Announcements
     category_id: DIC_kwDOQd9fX84CzICB
