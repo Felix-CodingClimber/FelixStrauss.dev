@@ -122,8 +122,8 @@ comments:
   giscus:
     repo: Felix-CodingClimber/FelixStrauss.dev # <gh-username>/<repo>
     repo_id: R_kgDOQd9fXw
-    category: Announcements
-    category_id: DIC_kwDOQd9fX84CzICB
+    category: Comments
+    category_id: DIC_kwDOQd9fX84CzINo
     mapping: pathname # optional, default to 'pathname'
     strict: 0 # optional, default to '0'
     input_position: top # optional, default to 'bottom'
