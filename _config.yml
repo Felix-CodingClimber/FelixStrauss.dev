@@ -149,6 +149,9 @@ collections:
   tabs:
     output: true
     sort_by: order
+  projects:
+    output: true
+    permalink: /projects/:title/
 
 defaults:
   - scope:
@@ -171,6 +174,12 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      permalink: /projects/:title/
 
 sass:
   style: compressed

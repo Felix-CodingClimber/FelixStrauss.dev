@@ -1,0 +1,100 @@
+---
+layout: default
+---
+<style>
+  #projects-grid {
+    margin-top: 2.5rem;
+  }
+
+  #projects-grid .project-card-wrapper {
+    margin-bottom: 1.25rem;
+  }
+
+  #projects-grid .project-content {
+    border-radius: var(--bs-border-radius);
+    background: var(--card-bg);
+    border: var(--bs-card-border-width) solid var(--bs-border-color-translucent);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+  }
+
+  #projects-grid .project-content:hover {
+    background: rgb(from var(--card-hover-bg) r g b / 0.3);
+  }
+
+  #projects-grid .project-link {
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+  }
+
+  #projects-grid .project-title {
+    color: var(--heading-color);
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  #projects-grid .project-description {
+    color: var(--text-muted-color);
+    margin-bottom: 0;
+  }
+
+  /* Disable default image popup behavior */
+  #projects-grid .project-content > a.popup {
+    display: block;
+    margin: 0;
+    pointer-events: none;
+  }
+
+  /* Remove shimmer effect from project images */
+  #projects-grid .shimmer::before {
+    animation: none !important;
+  }
+
+  #projects-grid .project-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<div id="projects-grid" class="flex-grow-1 px-xl-1">
+  {% for project in site.projects %}
+    <article class="project-card-wrapper">
+      <div class="project-content">
+        <a href="{{ project.url | relative_url }}" class="project-link">
+          <h1 class="project-title">{{ project.title }}</h1>
+
+          {% if project.description %}
+            <p class="project-description">{{ project.description }}</p>
+          {% endif %}
+        </a>
+
+        {% if project.image %}
+          {% assign src = project.image.path | default: project.image %}
+
+          {% if project.media_subpath %}
+            {% unless src contains '://' %}
+              {% assign src = project.media_subpath
+                | append: '/'
+                | append: src
+                | replace: '///', '/'
+                | replace: '//', '/'
+              %}
+            {% endunless %}
+          {% endif %}
+
+          {% assign alt = project.image.alt | xml_escape | default: project.title %}
+
+          <img src="{{ src }}" alt="{{ alt }}" class="project-image" loading="lazy">
+        {% endif %}
+      </div>
+    </article>
+  {% endfor %}
+</div>

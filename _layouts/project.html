@@ -1,0 +1,48 @@
+---
+layout: default
+---
+{% include lang.html %}
+
+<style>
+  /* Disable default image popup behavior */
+  article > a.popup {
+    display: block;
+    margin: 0;
+    pointer-events: none;
+  }
+
+  /* Remove shimmer effect from project images */
+  article .shimmer::before {
+    animation: none !important;
+  }
+
+  article img {
+    border-radius: var(--bs-border-radius);
+  }
+</style>
+
+<article class="px-1">
+  <header>
+    <h1>{{ page.title }}</h1>
+    <div class="d-flex flex-row justify-content-between mb-2">
+      <span class="text-muted">{{ page.timespan }}</span>
+      <a href="{{ page.link }}" target="_blank" rel="noopener noreferrer">{{ page.linkText }}</a>
+    </div>
+    {% if page.image %}
+      {% assign src = page.image.path | default: page.image %}
+
+      {% if page.media_subpath %}
+        {% unless src contains '://' %}
+          {% assign src = page.media_subpath | append: '/' | append: src | replace: '///', '/' | replace: '//', '/' %}
+        {% endunless %}
+      {% endif %}
+
+      {% assign alt = page.image.alt | xml_escape | default: page.title %}
+
+      <img src="{{ src }}" alt="{{ alt }}" loading="lazy">
+    {% endif %}
+  </header>
+  <div class="content">
+    {{ content }}
+  </div>
+</article>
