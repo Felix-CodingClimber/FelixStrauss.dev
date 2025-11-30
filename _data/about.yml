@@ -1,0 +1,46 @@
+aboutText: "I am a dedicated software developer with a strong background in industrial mechanics. My journey began with an apprenticeship in industrial mechanics, where I developed a solid foundation in technical skills and problem-solving. Over the years, I have transitioned into software development, where I now focus on creating efficient and effective solutions for manufacturing processes. My experience spans various technologies and methodologies, allowing me to contribute significantly to my team's success. I am passionate about continuous learning and growth, both personally and professionally."
+
+experience:
+  - title: "Software Developer"
+    organization: "Robert Bosch GmbH"
+    period: "Dec. 2022 – Present"
+    description: "Accountable for the full software development lifecycle, including design, architecture, implementation, DevOps, and maintenance of internal projects (Web and Windows applications supporting manufacturing). Mentoring IT specialist apprentices in C# programming."
+    skills:
+      - "Blazor"
+      - "C#"
+      - ".NET"
+      - "ASP.NET"
+      - "Web Development"
+      - "WPF"
+      - "WinUI 3"
+      - "Entity Framework Core"
+      - "Microsoft SQL Server"
+      - "MVVM"
+      - "DevOps"
+
+  - title: "Industrial Mechanic, prototype development"
+    organization: "Robert Bosch GmbH"
+    period: "Mar. 2015 – Nov. 2022"
+    duration: "7 Years 9 Month"
+    description: "Specialization in the programming of different CNC machines for manufacturing. Some of the techniques used include Siemens Sinumerik, Kuka robots, Trumpf laser, CAD-CAM, and AutoCAD."
+    skills:
+      - "CNC Programming"
+      - "Robot Programming"
+      - "AutoCAD"
+
+  - title: "Industrial Mechanic, series production"
+    organization: "Robert Bosch GmbH"
+    period: "July 2013 – Feb. 2015"
+    duration: "1 Year 8 Month"
+    description: ""
+
+education:
+  - title: "Apprenticeship Industrial Mechanic"
+    organization: "Robert Bosch GmbH"
+    period: "Sept. 2010 – June 2013"
+    description: ""
+
+  - title: "Intermediate school-leaving certificate (Realschulabschluss)"
+    organization: "Staatliche Realschule Ansbach"
+    period: "Sept. 2004 – July 2010"
+    description: ""

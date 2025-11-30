@@ -1,0 +1,86 @@
+---
+layout: page
+---
+<link rel="stylesheet" href="{{ '/assets/css/timeline.css' | relative_url }}">
+
+{% if page.aboutText or site.data.about.aboutText %}
+  <p class="about-text">
+    {{ page.aboutText | default: site.data.about.aboutText }}
+  </p>
+{% endif %}
+
+{% if page.experience or site.data.about.experience %}
+  <div class="timeline-section">
+    <h2>Experience</h2>
+    <ul class="timeline">
+      {% assign experience_data = page.experience | default: site.data.about.experience %}
+      {% for item in experience_data %}
+        <li class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="timeline-title">{{ item.title }}</h3>
+              <span class="timeline-period">{{ item.period }}</span>
+            </div>
+            <div class="timeline-meta">
+              {% if item.organization and item.organization != '' %}
+                <span class="timeline-organization">{{ item.organization }}</span>
+              {% endif %}
+              {% if item.duration and item.duration != '' %}
+                <span class="timeline-duration">{{ item.duration }}</span>
+              {% endif %}
+            </div>
+            {% if item.description and item.description != '' %}
+              <p class="timeline-description">{{ item.description }}</p>
+            {% endif %}
+            {% if item.skills and item.skills.size > 0 %}
+              <div class="timeline-skills">
+                {% for skill in item.skills %}
+                  <span class="timeline-skill-tag">{{ skill }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+{% if page.education or site.data.about.education %}
+  <div class="timeline-section">
+    <h2>Education</h2>
+    <ul class="timeline">
+      {% assign education_data = page.education | default: site.data.about.education %}
+      {% for item in education_data %}
+        <li class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="timeline-title">{{ item.title }}</h3>
+              <span class="timeline-period">{{ item.period }}</span>
+            </div>
+            <div class="timeline-meta">
+              {% if item.organization and item.organization != '' %}
+                <span class="timeline-organization">{{ item.organization }}</span>
+              {% endif %}
+              {% if item.duration and item.duration != '' %}
+                <span class="timeline-duration">{{ item.duration }}</span>
+              {% endif %}
+            </div>
+            {% if item.description and item.description != '' %}
+              <p class="timeline-description">{{ item.description }}</p>
+            {% endif %}
+            {% if item.skills and item.skills.size > 0 %}
+              <div class="timeline-skills">
+                {% for skill in item.skills %}
+                  <span class="timeline-skill-tag">{{ skill }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+{{ content }}
