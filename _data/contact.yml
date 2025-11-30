@@ -7,10 +7,6 @@
   icon: "fab fa-linkedin"
   url: "https://www.linkedin.com/in/felix-strau%C3%9F-674125273"
 
-# - type: bluesky
-#   icon: "fa-brands fa-bluesky"
-#   url: "https://bsky.app/profile/felix-cocli.bsky.social"
-
 - type: email
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
