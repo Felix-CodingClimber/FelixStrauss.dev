@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<div>
+  <h1>Support My Work</h1>
+
+  <p>
+    If you find my projects helpful or simply want to support my work, consider buying me a coffee! Your support helps
+    me continue creating and sharing open-source projects.
+  </p>
+
+  <div>
+    <a id="bmc-button" href="https://www.buymeacoffee.com/felixstrauss" target="_blank" rel="noopener noreferrer">
+      <span id="bmc-svg-container"></span>
+    </a>
+  </div>
+
+  <p style="margin-top: 1rem;">Every contribution is greatly appreciated and motivates me to keep building! 🚀</p>
+</div>
+
+<script>
+  // Dynamically load and inject the SVG to avoid Jekyll's popup wrapper
+  fetch('/assets/img/buyMeACoffeeButton.svg')
+    .then((response) => response.text())
+    .then((svgText) => {
+      const container = document.getElementById('bmc-svg-container');
+      container.innerHTML = svgText;
+      // Apply styling to the SVG element
+      const svg = container.querySelector('svg');
+      if (svg) {
+        svg.style.height = '60px';
+        svg.style.width = 'auto';
+        svg.style.display = 'block';
+      }
+    })
+    .catch((error) => console.error('Error loading SVG:', error));
+</script>
