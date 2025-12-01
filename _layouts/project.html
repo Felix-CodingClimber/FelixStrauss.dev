@@ -3,25 +3,7 @@ layout: default
 ---
 {% include lang.html %}
 
-<style>
-  article a.popup {
-    /* Disable default image popup behavior */
-    display: block;
-    margin: 0;
-    pointer-events: none;
-    /* Add border and shadow to make sure bright images are visible against background in light mode */
-    border: var(--bs-card-border-width) solid var(--bs-border-color-translucent);
-    box-shadow: var(--card-shadow);
-    border-radius: var(--bs-border-radius);
-  }
-
-  article .shimmer::before {
-    /* Remove shimmer effect from project images */
-    animation: none !important;
-    /* Override background to prevent bright overlay in light mode */
-    background: transparent !important;
-  }
-</style>
+<link rel="stylesheet" href="{{ '/assets/css/project.css' | relative_url }}">
 
 <article class="px-1">
   <header>
