@@ -20,7 +20,7 @@ layout: default
 
 <script>
   // Dynamically load and inject the SVG to avoid Jekyll's popup wrapper
-  fetch('/assets/img/buyMeACoffeeButton.svg')
+  fetch("{{ '/assets/img/buyMeACoffeeButton.svg' | relative_url }}")
     .then((response) => response.text())
     .then((svgText) => {
       const container = document.getElementById('bmc-svg-container');
