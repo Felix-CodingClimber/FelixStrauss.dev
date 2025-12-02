@@ -31,7 +31,7 @@ layout: default
 
           {% assign alt = project.image.alt | xml_escape | default: project.title %}
 
-          <img src="{{ src }}" alt="{{ alt }}" class="project-image" loading="lazy">
+          <img src="{{ src }}" alt="{{ alt }}" class="project-image">
         {% endif %}
       </div>
     </article>
