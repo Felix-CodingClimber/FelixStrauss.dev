@@ -19,19 +19,21 @@ layout: default
 </div>
 
 <script>
-  // Dynamically load and inject the SVG to avoid Jekyll's popup wrapper
-  fetch("{{ '/assets/img/buyMeACoffeeButton.svg' | relative_url }}")
-    .then((response) => response.text())
-    .then((svgText) => {
-      const container = document.getElementById('bmc-svg-container');
-      container.innerHTML = svgText;
-      // Apply styling to the SVG element
-      const svg = container.querySelector('svg');
-      if (svg) {
-        svg.style.height = '60px';
-        svg.style.width = 'auto';
-        svg.style.display = 'block';
-      }
-    })
-    .catch((error) => console.error('Error loading SVG:', error));
+  document.addEventListener('DOMContentLoaded', () => {
+    // Dynamically load and inject the SVG to avoid Jekyll's popup wrapper
+    fetch("{{ '/assets/img/buyMeACoffeeButton.svg' | relative_url }}")
+      .then((response) => response.text())
+      .then((svgText) => {
+        const container = document.getElementById('bmc-svg-container');
+        container.innerHTML = svgText;
+
+        const svg = container.querySelector('svg');
+        if (svg) {
+          svg.style.height = '60px';
+          svg.style.width = 'auto';
+          svg.style.display = 'block';
+        }
+      })
+      .catch((error) => console.error('Error loading SVG:', error));
+  });
 </script>
