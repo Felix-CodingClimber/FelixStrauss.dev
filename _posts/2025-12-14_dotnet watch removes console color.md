@@ -1,6 +1,6 @@
 ---
 title: dotnet watch removes console color
-date: 2025-12-15 16:00 +0100
+date: 2025-12-14 18:00 +0100
 categories: [DotNet, Shorts]
 tags: [dotnet, .net, c#, bug, short]
 image:
